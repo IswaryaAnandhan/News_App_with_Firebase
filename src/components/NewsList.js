@@ -9,7 +9,7 @@ const NewsList = ({ articles }) => {
   const [favorites, setFavorites] = useState([]);
   
 // Function to add an article to the user's favorites
-const addFavoriteArticle = async (userId, article) => {
+const addFavoriteArticle = async ( article) => {
   try {
     const favoritesRef = collection(db, `favorites`);
     await addDoc(favoritesRef, article);
@@ -19,9 +19,9 @@ const addFavoriteArticle = async (userId, article) => {
 };
 
 // Function to remove an article from the user's favorites
- const removeFavoriteArticle = async (userId, articleId) => {
+ const removeFavoriteArticle = async () => {
   try {
-    const articleRef = doc(db, `favorites/${userId}/articles/${articleId}`);
+    const articleRef = doc(db, `favorites`);
     await deleteDoc(articleRef);
   } catch (error) {
     console.error("Error removing favorite article: ", error);
