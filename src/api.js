@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = "process.env.REACT_APP_NEWS_API_KEY"
+const API_KEY = "3d12c1cb173649199da45a8fee965277"
 const API_URL = 'https://newsapi.org/v2/top-headlines';
 
 export const getNewsArticles = async () => {
